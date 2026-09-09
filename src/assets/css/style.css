@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { 
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.card-hover {
+    transition: all 0.2s ease;
+}
+.card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* WhatsApp-style responsive layout */
+.whatsapp-container {
+    display: flex;
+    height: calc(100vh - 120px);
+    max-width: 1600px;
+    margin: 0 auto;
+    background: #f0f2f5;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.whatsapp-sidebar {
+    width: 30%;
+    min-width: 300px;
+    background: white;
+    border-right: 1px solid #d1d7db;
+    display: flex;
+    flex-direction: column;
+}
+
+.whatsapp-chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #efeae2;
+    position: relative;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .whatsapp-container {
+        height: calc(100vh - 80px);
+        border-radius: 0;
+    }
+    
+    .whatsapp-sidebar {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+    }
+    
+    .whatsapp-sidebar.hidden-mobile {
+        display: none;
+    }
+    
+    .whatsapp-chat {
+        width: 100%;
+    }
+    
+    .whatsapp-chat.hidden-mobile {
+        display: none;
+    }
+}
+
+/* Profile page styles */
+.profile-header {
+    background: linear-gradient(135deg, #00a884 0%, #008f6f 100%);
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid white;
+    margin: 0 auto 1rem;
+    background: #dfe5e7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #667781;
+}
+
+/* Message bubbles */
+.message-bubble {
+    max-width: 65%;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 1px 0.5px rgba(0,0,0,0.13);
+}
+
+.message-bubble.sent {
+    background: #d9fdd3;
+    align-self: flex-end;
+}
+
+.message-bubble.received {
+    background: white;
+    align-self: flex-start;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cccccc;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #aaaaaa;
+}
+
+/* Input focus states */
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #00a884;
+    box-shadow: 0 0 0 2px rgba(0, 168, 132, 0.1);
+}
+
+/* Button hover effects */
+.btn-primary {
+    background: #00a884;
+    color: white;
+    transition: all 0.2s;
+}
+
+.btn-primary:hover {
+    background: #008f6f;
+}
+
+.btn-secondary {
+    background: #f0f2f5;
+    color: #3b4a54;
+    transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+    background: #e4e6e8;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+  
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+  
+  nav ul li a {
+    display: block;
+    padding: 0.75rem;
+    background: #f3f4f6;
+    border-radius: 0.5rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.75rem;
+  }
+  
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Ensure flexible layout */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 1rem;
+}
